@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyLibraryTest/MyClassTest.cs">
+    <Files>
+      <File FileName="MyApplication/Program.cs" Line="2" Column="17" />
+      <File FileName="MyLibrary/MyClass.cs" Line="19" Column="18" />
+      <File FileName="MyLibraryTest/MyClassTest.cs" Line="2" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
