@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MyApplication" default="hello">
+	<property name="hello.string" value="Hello World" />
+	<target name="hello" description="Echoes 'Hello World'">
+		<echo message="${hello.string}" />
+	</target>
+</project>
+

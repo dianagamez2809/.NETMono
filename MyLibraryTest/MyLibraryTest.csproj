@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="nunit.util, Version=2.6.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
       <Private>False</Private>
+      <Package>nunit</Package>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -42,10 +43,4 @@
     <Compile Include="MyClassTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\MyLibrary\MyLibrary.csproj">
-      <Project>{39A89874-2389-42CF-A63B-8C82B8702C43}</Project>
-      <Name>MyLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
