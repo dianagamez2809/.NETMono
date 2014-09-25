@@ -1,0 +1,5 @@
+/home/diana/MyApplication/MyLibrary/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/diana/MyApplication/MyLibrary/bin/Debug/MyLibrary.dll.mdb
+/home/diana/MyApplication/MyLibrary/bin/Debug/MyLibrary.dll
+/home/diana/MyApplication/MyLibrary/obj/Debug/MyLibrary.dll
+/home/diana/MyApplication/MyLibrary/obj/Debug/MyLibrary.dll.mdb

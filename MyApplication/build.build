@@ -1,8 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="MyApplication" default="hello">
-	<property name="hello.string" value="Hello World" />
-	<target name="hello" description="Echoes 'Hello World'">
-		<echo message="${hello.string}" />
-	</target>
+<project name="MyApplication" default="mvc" basedir=".">
+<property name="debug" value="true" overwrite="false" />
+<property name="project.version" value="1.0.0"/>
+<property name="project.name" value="MyApplication"/>
+<property name="library" value="MyLibrary.dll"/>
+<property name="test_library" value="MyLibraryTest.dll"/>
+<tstamp property="build.date" pattern="yyyyMMdd" verbose="true" />
+
+<property name="src_dir" value="MyLibraryTest/bin/Debug/"/>
+<property name="lib_dir" value="ExternalLibraries"/>
+<property name="site_dir" value=""/>
+ 
+<!-- xsp specific properties -->
+<property name="xsp_port" value="8088"/>
+<property name="xsp_root" value="${site_dir}"/>
+ 
+<target name="mvc" description="Build MySite MVC">
+<echo message="Building ${project.name}-${project.version} MVC"/>
+ 
+<mkdir dir="${site_dir}/bin"/>
+ 
+<csc target="library"
+output="../MyLibraryTest/bin/Debug/${library}"
+verbose="true"
+>
+<sources>
+<include name="${src_dir}/**.cs"/>
+<include name="Global.asax.cs"/>
+<include name="Controllers/**.cs"/>
+<include name="Models/**.cs"/>
+</sources>
+<references>
+<include name="System.Xml.dll"/>
+<include name="System.Web.dll"/>
+<include name="System.Xml.Linq.dll"/>
+<include name="System.Web.Mvc.dll"/>
+<include name="System.Web.Routing.dll"/>
+<include name="System.Web.Abstractions.dll"/>
+<include name="System.Web.Services.dll"/>
+</references>
+</csc>
+
+
+</target>
+ 
+<target name="clean" description="Clean up">
+<echo message="Cleaning ${project.name}"/>
+<delete dir="${site_dir}"/>
+</target>
+ 
+<target name="run" description="Runs the xsp2 web server on the port cited above" depends="mvc">
+<echo message="Starting the xsp2 web server running on port ${xsp_port}"/>
+ 
+<exec program="xsp2" failonerror="true" commandline="--port ${xsp_port} --verbose --root ." workingdir="${xsp_root}"/>
+</target>
+ 
+<target name="test" description="Run some freakin unit tests" depends="mvc">
+<csc target="library"
+output="../MyLibraryTest/bin/Debug/${test_library}"
+verbose="true"
+>
+<sources>
+<include name="Tests/**.cs"/>
+</sources>
+<references>
+<include name="./${site_dir}/bin/${library}"/>
+ 
+<include name="nunit.core.dll"/>
+<include name="nunit.framework.dll"/>
+</references>
+</csc>
+ 
+<echo message="Running NUnit tests"/>
+<nunit2>
+	<formatter type="Plain" />
+	<test assemblyname="../MyLibraryTest/bin/Debug/${test_library}" appconfig="${test_library}.config" />
+</nunit2>
+</target>
 </project>
 

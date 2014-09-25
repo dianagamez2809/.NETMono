@@ -1,11 +1,36 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyLibraryTest/MyClassTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyApplication/build.build">
     <Files>
-      <File FileName="MyApplication/Program.cs" Line="2" Column="17" />
-      <File FileName="MyLibrary/MyClass.cs" Line="19" Column="18" />
-      <File FileName="MyLibraryTest/MyClassTest.cs" Line="2" Column="14" />
+      <File FileName="MyApplication/Program.cs" Line="11" Column="3" />
+      <File FileName="MyApplication/MyClass.cs" Line="9" Column="4" />
+      <File FileName="MyApplication/Test.cs" Line="18" Column="6" />
+      <File FileName="MyApplication/build.build" Line="59" Column="9" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True">
+          <Node name="MyApplication" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True">
+          <Node name="MyApplication" expanded="True">
+            <Node name="MyApplication" expanded="True">
+              <Node name="Test" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
